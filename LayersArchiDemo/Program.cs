@@ -12,9 +12,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IJobRepository, JobRepository>();
 
-builder.Services.AddSingleton<IUserService, UserService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IJobService, JobService>();
 
 var app = builder.Build();
 

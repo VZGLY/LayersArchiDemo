@@ -8,7 +8,7 @@ namespace LayersArchiDemo_DAL.Repository
     {
         public User? Create(User user)
         {
-            user.Id = FakeDB.Users.Max(x => x.Id);
+            user.Id = FakeDB.Users.Max(x => x.Id) + 1;
 
             FakeDB.Users.Add(user);
 
